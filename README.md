@@ -1,10 +1,11 @@
 # yatube_project
-Social network of bloggers
+
+Social network for publishing personal diaries
 Blog platform, social network
 
-Thanks to this project, it will be possible 
-
-to treat friends from different cities with ice cream.
+Нou can create your own page 
+Нou can go to other people's pages, 
+subscribe to authors and comment on their posts.
 
 Author:
 

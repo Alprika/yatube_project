@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+<!DOCTYPE html> <!-- Используется html 5 версии -->
+<html lang="ru"> <!-- Язык сайта - русский -->
+  <head>
+    <title> {% block title %} Лев Толстой – зеркало русской революции. {% endblock %} </title>
+  </head>
+  <body>
+    
+    <main>
+        {% block content %}
+      <!-- класс py-5 создает отступы сверху и снизу блока -->
+      <div class="container py-5">
+        <h1>{{title_group_list}}</h1>
+        <p>
+          Группа тайных поклонников графа.
+        </p>
+        <article>
+          <ul>
+            <li>
+              Автор: {{post.author.get_full_name}}
+            </li>
+            <li>
+              Дата публикации: {{post.pub_date|date:"d E Y"}}
+            </li>
+          </ul>      
+          <p>
+            {{post.text}}
+          </p>
+          {%if post.text%}
+          <a href="group_list.html">все записи группы</a>
+          {% endif %}
+          {% if not forloop.last %} <hr> {%endif%}
+          {% endfor %}
+        </article>
+        <!-- под последним постом нет линии -->
+      </div>
+      {% endblock %}
+    </main>
+    <!-- Использованы классы бустрапа: -->
+    <!-- border-top: создаёт тонкую линию сверху блока -->
+    <!-- text-center: выравнивает текстовые блоки внутри блока по центру -->
+    <!-- py-3: контент внутри размещается с отступом сверху и снизу -->         
+
+    {/body}
